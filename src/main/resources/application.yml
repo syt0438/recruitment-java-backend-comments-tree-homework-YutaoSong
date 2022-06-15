@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:sqlite::resource:db/homework
+    username:
+    password:
+    driver-class-name: org.sqlite.JDBC
+  resources:
+    static-locations: classpath:static/
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.homework.comments.domain.entity
+  global-config:
+    id-type: 0
+    field-strategy: 2
+    db-column-underline: true
+  configuration:
+    map-underscore-to-camel-case: true
+
+# Swagger
+knife4j:
+  enable: true
+  setting:
+    enableSearch: true
+    enableDynamicParameter: true
+
+logging:
+  level:
+    com.homework.comments: DEBUG
+
+auth:
+  whileTokenUris:
+    - /api/auth/*
+    - /api/message/list

@@ -1,0 +1,92 @@
+### register
+PUT http://localhost:8080/api/api/auth/register
+Content-Type: application/json; charset=UTF-8
+
+{
+  "uid": "syt04381",
+  "pwd": "Ds@102410241",
+  "email": "syt01438@gmail.com"
+}
+
+### uid login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json; charset=UTF-8
+
+{
+  "uid": "linshu",
+  "pwd": "Ds@10241024",
+  "remembered": true
+}
+
+### email login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json; charset=UTF-8
+
+{
+  "email": "syt0438@gmail.com",
+  "pwd": "Ds@10241024",
+  "remembered": true
+}
+
+### uid login and remember me
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json; charset=UTF-8
+
+{
+  "uid": "syt0438",
+  "pwd": "Ds@10241024",
+  "remembered": true
+}
+
+### incorrect token validate test
+POST http://localhost:8080/api/index
+Content-Type: application/json; charset=UTF-8
+token: abc
+
+{}
+
+### publish message
+PUT http://localhost:8080/api/message
+Content-Type: application/json; charset=UTF-8
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJsaW5zaHUiLCJlbWFpbCI6InN5dDA0MzhAMTYzLmNvbSIsImV4cGlyZWRUaW1lIjoxNjU3MTg2MzIxOTUyfQ.EvVZwSUPrqo3QlQdQ56dWZUQxiXIMvvS86sINPLRktI
+
+{
+  "msg": "心生则种种魔生，心灭则种种魔灭"
+}
+
+### publish message
+PUT http://localhost:8080/api/message
+Content-Type: application/json; charset=UTF-8
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJsaW5zaHUiLCJlbWFpbCI6InN5dDA0MzhAMTYzLmNvbSIsImV4cGlyZWRUaW1lIjoxNjU3MTg2MzIxOTUyfQ.EvVZwSUPrqo3QlQdQ56dWZUQxiXIMvvS86sINPLRktI
+
+{
+  "msg": "世上事了犹未了，终以不了了之"
+}
+
+### publish comment [linshu]
+PUT http://localhost:8080/api/comment
+Content-Type: application/json; charset=UTF-8
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJsaW5zaHUiLCJlbWFpbCI6InN5dDA0MzhAMTYzLmNvbSIsImV4cGlyZWRUaW1lIjoxNjU3MTg2MzIxOTUyfQ.EvVZwSUPrqo3QlQdQ56dWZUQxiXIMvvS86sINPLRktI
+
+{
+  "messageId": "1534075951875416066",
+  "parentId": "1534107325122494466",
+  "msg": "++9"
+}
+
+### publish comment [syt0438]
+PUT http://localhost:8080/api/comment
+Content-Type: application/json; charset=UTF-8
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiJzeXQwNDM4IiwiZW1haWwiOiJzeXQwNDM4QGdtYWlsLmNvbSIsImV4cGlyZWRUaW1lIjoxNjU3MTg2Mzg0NDg4fQ.BKRsDQOZFA5ObhrNMdXkIX6VLbtIbVX2aeemJ2a7uPM
+
+{
+  "messageId": "1534075951875416066",
+  "parentId": "1534107325122494466",
+  "msg": "+++10"
+}
+
+
+### search messages
+GET http://localhost:8080/api/message/list
+
+
